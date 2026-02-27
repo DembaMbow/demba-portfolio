@@ -1,0 +1,148 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "services": "Services",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact",
+    "cta": "Let's work together"
+  },
+  "hero": {
+    "badge": "Available for new projects",
+    "greeting": "Hello, I am",
+    "description": "Passionate about photography, videography and web design, I use visuals to tell stories and create meaningful digital experiences. Based in",
+    "location": "Rouen, France",
+    "btnProjects": "View my projects",
+    "btnContact": "Contact me",
+    "roles": ["Digital Creator", "UI/UX Designer", "Web Strategist", "Founder of Perform Digital"]
+  },
+  "about": {
+    "eyebrow": "01 — About",
+    "titleLine1": "Digital creator,",
+    "titleAccent": "human above all",
+    "statYears": "Years of experience",
+    "statProjects": "Projects completed",
+    "statClients": "Satisfied clients",
+    "bio1": "Passionate digital creator, I make visuals a vector of storytelling and emotion. My unique journey — supporting people with disabilities and studying digital marketing at",
+    "bio1School": "Need for School",
+    "bio1End": "— nurtures a human and inclusive approach to design.",
+    "bio2Start": "Today, I am the architect of",
+    "bio2Mid": ", a digital agency dedicated to web creation, UI/UX design and online visibility strategy.",
+    "bio3": "My commitment: to respond to each project within",
+    "bio3Time": "24 to 48 hours",
+    "bio3End": "with total dedication to quality, accessibility and impact.",
+    "cvBtn": "Download my CV",
+    "valuesTitle": "My core values"
+  },
+  "skills": {
+    "eyebrow": "02 — Skills",
+    "title": "My technical",
+    "titleAccent": "& creative arsenal",
+    "subtitle": "Mastered tools to design, develop and promote your digital projects.",
+    "filterAll": "All",
+    "filterDesign": "Design",
+    "filterDev": "Development",
+    "filterMarketing": "Marketing",
+    "filterBusiness": "Business"
+  },
+  "services": {
+    "eyebrow": "03 — Services",
+    "title": "What I",
+    "titleAccent": "offer",
+    "subtitle": "Custom digital solutions to bring your ideas to life and boost your online presence.",
+    "ctaText": "Do you have a project? Let's talk!",
+    "ctaBtn": "Talk about your project →",
+    "items": [
+      {
+        "title": "Web Design & Development",
+        "description": "Creation of modern, clear and high-performing websites. Interfaces that convert and inspire trust."
+      },
+      {
+        "title": "UI/UX Design",
+        "description": "Intuitive user-centered interfaces. Optimized journey, memorable experience."
+      },
+      {
+        "title": "SEO & Digital Strategy",
+        "description": "Improving your online visibility and positioning on search engines."
+      },
+      {
+        "title": "Graphic Design",
+        "description": "Impactful visual creations: posters, banners, business cards, print and digital materials."
+      },
+      {
+        "title": "Brand Identity",
+        "description": "Logo, graphic charter, colors and consistent visual systems that define your DNA."
+      },
+      {
+        "title": "AI-Assisted Creation",
+        "description": "Using artificial intelligence (ChatGPT, Midjourney) to accelerate the creation of content, visuals and digital strategies."
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": "04 — Projects",
+    "title": "My",
+    "titleAccent": "work",
+    "subtitle": "An overview of my projects — from branding to web interfaces and graphic design.",
+    "filterAll": "All",
+    "viewProject": "View project",
+    "viewSite": "View site",
+    "note": "Do you have a similar project? Let's talk!",
+    "noteLink": "Contact me"
+  },
+  "experience": {
+    "eyebrow": "05 — Experience",
+    "title": "My professional",
+    "titleAccent": "journey"
+  },
+  "contact": {
+    "eyebrow": "06 — Contact",
+    "title": "Let's start your",
+    "titleAccent": "project together",
+    "subtitle": "An idea, a question, a project? Write to me. I commit to responding within",
+    "subtitleTime": "24 to 48 hours",
+    "infoTitle": "Find me",
+    "labelPhone": "Phone / WhatsApp",
+    "labelLocation": "Location",
+    "fieldName": "Your name",
+    "fieldEmail": "Your email",
+    "fieldSubject": "Subject",
+    "fieldMessage": "Your message",
+    "placeholderName": "Your full name",
+    "placeholderSubject": "Choose a subject",
+    "placeholderMessage": "Describe your project, needs, estimated budget...",
+    "subjectOptions": ["Hire me", "Web Design & Development", "UI/UX Design", "SEO & Digital Strategy", "Brand Identity", "Other"],
+    "required": "Required fields",
+    "send": "Send message",
+    "sending": "Sending…",
+    "successTitle": "Message sent!",
+    "successText": "Thank you for your message. I will reply within 24 to 48 hours.",
+    "successBtn": "Send another message",
+    "errorText": "An error occurred. Please try again.",
+    "chars": "character",
+    "charsPlural": "characters"
+  },
+  "values": [
+    { "title": "Inclusion & Humanity", "description": "My experience supporting people with disabilities informs every creative decision." },
+    { "title": "Impact & Meaning", "description": "Every project must create real value, not just aesthetic appeal." },
+    { "title": "Continuous Learning", "description": "Digital evolves fast — I adapt and train constantly." },
+    { "title": "Accessible Design", "description": "Designing for everyone, without exception, is a requirement, not an option." }
+  ],
+  "footer": {
+    "tagline1": "Passionate digital creator.",
+    "tagline2": "Based in Rouen, active everywhere.",
+    "navigation": "Navigation",
+    "copyright": "All rights reserved.",
+    "mention": "Crafted with passion in React · TypeScript · SASS",
+    "backTop": "Back to top"
+  },
+  "validation": {
+    "nameRequired": "Your name is required.",
+    "emailRequired": "Your email is required.",
+    "emailInvalid": "Please enter a valid email.",
+    "subjectRequired": "A subject is required.",
+    "messageRequired": "Your message is required.",
+    "messageTooShort": "The message must be at least 20 characters."
+  }
+}

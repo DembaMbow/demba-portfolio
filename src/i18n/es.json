@@ -1,0 +1,148 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "skills": "Competencias",
+    "services": "Servicios",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "cta": "Trabajemos juntos"
+  },
+  "hero": {
+    "badge": "Disponible para nuevos proyectos",
+    "greeting": "Hola, soy",
+    "description": "Apasionado por la fotografía, la videografía y el diseño web, uso las imágenes para contar historias y crear experiencias digitales con significado. Basado en",
+    "location": "Rouen, Francia",
+    "btnProjects": "Ver mis proyectos",
+    "btnContact": "Contáctame",
+    "roles": ["Creador Digital", "UI/UX Designer", "Estratega Web", "Fundador de Perform Digital"]
+  },
+  "about": {
+    "eyebrow": "01 — Sobre mí",
+    "titleLine1": "Creador digital,",
+    "titleAccent": "humano ante todo",
+    "statYears": "Años de experiencia",
+    "statProjects": "Proyectos realizados",
+    "statClients": "Clientes satisfechos",
+    "bio1": "Creador digital apasionado, utilizo las imágenes como vector narrativo y emocional. Mi trayectoria única — entre el apoyo a personas con discapacidad y la formación en marketing digital en",
+    "bio1School": "Need for School",
+    "bio1End": "— nutre un enfoque humano e inclusivo del diseño.",
+    "bio2Start": "Hoy, soy el arquitecto de",
+    "bio2Mid": ", una agencia digital dedicada a la creación web, el diseño UI/UX y la estrategia de visibilidad online.",
+    "bio3": "Mi promesa: responder a cada proyecto en un plazo de",
+    "bio3Time": "24 a 48 horas",
+    "bio3End": "con total compromiso con la calidad, la accesibilidad y el impacto.",
+    "cvBtn": "Descargar mi CV",
+    "valuesTitle": "Mis valores fundamentales"
+  },
+  "skills": {
+    "eyebrow": "02 — Competencias",
+    "title": "Mi arsenal",
+    "titleAccent": "técnico y creativo",
+    "subtitle": "Herramientas dominadas para diseñar, desarrollar y promover tus proyectos digitales.",
+    "filterAll": "Todos",
+    "filterDesign": "Diseño",
+    "filterDev": "Desarrollo",
+    "filterMarketing": "Marketing",
+    "filterBusiness": "Negocio"
+  },
+  "services": {
+    "eyebrow": "03 — Servicios",
+    "title": "Lo que",
+    "titleAccent": "ofrezco",
+    "subtitle": "Soluciones digitales a medida para dar vida a tus ideas y potenciar tu presencia online.",
+    "ctaText": "¿Tienes un proyecto? ¡Hablemos!",
+    "ctaBtn": "Hablemos de tu proyecto →",
+    "items": [
+      {
+        "title": "Diseño Web & Desarrollo",
+        "description": "Creación de sitios web modernos, claros y de alto rendimiento. Interfaces que convierten e inspiran confianza."
+      },
+      {
+        "title": "UI/UX Design",
+        "description": "Interfaces intuitivas centradas en el usuario. Recorrido optimizado, experiencia memorable."
+      },
+      {
+        "title": "SEO & Estrategia Digital",
+        "description": "Mejora de tu visibilidad online y posicionamiento en los motores de búsqueda."
+      },
+      {
+        "title": "Diseño Gráfico",
+        "description": "Creaciones visuales impactantes: carteles, banners, tarjetas de visita, materiales impresos y digitales."
+      },
+      {
+        "title": "Identidad de Marca",
+        "description": "Logo, manual de identidad, colores y sistemas visuales coherentes que definen tu ADN."
+      },
+      {
+        "title": "Creación asistida por IA",
+        "description": "Uso de inteligencia artificial (ChatGPT, Midjourney) para acelerar la creación de contenidos, visuales y estrategias digitales."
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": "04 — Proyectos",
+    "title": "Mis",
+    "titleAccent": "trabajos",
+    "subtitle": "Una muestra de mis proyectos — del branding a las interfaces web pasando por el diseño gráfico.",
+    "filterAll": "Todos",
+    "viewProject": "Ver proyecto",
+    "viewSite": "Ver sitio",
+    "note": "¿Tienes un proyecto similar? ¡Hablemos!",
+    "noteLink": "Contáctame"
+  },
+  "experience": {
+    "eyebrow": "05 — Experiencia",
+    "title": "Mi trayectoria",
+    "titleAccent": "profesional"
+  },
+  "contact": {
+    "eyebrow": "06 — Contacto",
+    "title": "Iniciemos tu",
+    "titleAccent": "proyecto juntos",
+    "subtitle": "¿Una idea, una pregunta, un proyecto? Escríbeme. Me comprometo a responderte en",
+    "subtitleTime": "24 a 48 horas",
+    "infoTitle": "Encuéntrame",
+    "labelPhone": "Teléfono / WhatsApp",
+    "labelLocation": "Ubicación",
+    "fieldName": "Tu nombre",
+    "fieldEmail": "Tu email",
+    "fieldSubject": "Asunto",
+    "fieldMessage": "Tu mensaje",
+    "placeholderName": "Tu nombre completo",
+    "placeholderSubject": "Elige un asunto",
+    "placeholderMessage": "Describe tu proyecto, necesidades, presupuesto estimado...",
+    "subjectOptions": ["Contratarme", "Diseño Web & Desarrollo", "UI/UX Design", "SEO & Estrategia Digital", "Identidad de Marca", "Otro"],
+    "required": "Campos obligatorios",
+    "send": "Enviar mensaje",
+    "sending": "Enviando…",
+    "successTitle": "¡Mensaje enviado!",
+    "successText": "Gracias por tu mensaje. Te responderé en 24 a 48 horas.",
+    "successBtn": "Enviar otro mensaje",
+    "errorText": "Ocurrió un error. Por favor intenta de nuevo.",
+    "chars": "carácter",
+    "charsPlural": "caracteres"
+  },
+  "values": [
+    { "title": "Inclusión & Humanidad", "description": "Mi experiencia apoyando a personas con discapacidad nutre cada decisión creativa." },
+    { "title": "Impacto & Sentido", "description": "Cada proyecto debe crear valor real, no solo estético." },
+    { "title": "Aprendizaje Continuo", "description": "Lo digital evoluciona rápido — me adapto y me formo constantemente." },
+    { "title": "Diseño Accesible", "description": "Diseñar para todos, sin excepción, es una exigencia, no una opción." }
+  ],
+  "footer": {
+    "tagline1": "Creador digital apasionado.",
+    "tagline2": "Basado en Rouen, activo en todas partes.",
+    "navigation": "Navegación",
+    "copyright": "Todos los derechos reservados.",
+    "mention": "Creado con pasión en React · TypeScript · SASS",
+    "backTop": "Volver arriba"
+  },
+  "validation": {
+    "nameRequired": "Tu nombre es obligatorio.",
+    "emailRequired": "Tu email es obligatorio.",
+    "emailInvalid": "Por favor ingresa un email válido.",
+    "subjectRequired": "El asunto es obligatorio.",
+    "messageRequired": "Tu mensaje es obligatorio.",
+    "messageTooShort": "El mensaje debe tener al menos 20 caracteres."
+  }
+}

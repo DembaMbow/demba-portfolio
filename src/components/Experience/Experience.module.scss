@@ -1,0 +1,188 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.experience {
+  @include section-pad;
+  background: $bg-secondary;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: $gradient-primary;
+    opacity: 0.3;
+  }
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-12;
+}
+
+// --- En-tête ---
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-4;
+  max-width: 600px;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: $violet-light;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.title {
+  @include section-title;
+  line-height: 1.15;
+}
+
+.titleAccent {
+  @include gradient-text;
+}
+
+// --- Timeline ---
+.timeline {
+  position: relative;
+  padding-left: $sp-8;
+
+  @include respond-to(md) { padding-left: $sp-12; }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, $violet, rgba($cyan, 0.2));
+    opacity: 0.4;
+  }
+}
+
+.entry {
+  position: relative;
+  padding-bottom: $sp-10;
+
+  &:last-child { padding-bottom: 0; }
+}
+
+.dot {
+  position: absolute;
+  left: calc(-#{$sp-8} + 1px);
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: $r-full;
+  background: $gradient-primary;
+  box-shadow: 0 0 12px rgba($violet, 0.6);
+
+  @include respond-to(md) { left: calc(-#{$sp-12} + 1px); }
+}
+
+.content {
+  @include glass;
+  border-radius: $r-xl;
+  padding: $sp-6;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-3;
+  transition: border-color $t-base;
+  @include no-motion { transition: none; }
+
+  &:hover { border-color: $border-hover; }
+}
+
+.period {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: $violet-light;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.role {
+  font-family: $font-heading;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $text-primary;
+}
+
+.company {
+  font-size: 1rem;
+  font-weight: 600;
+  @include gradient-text;
+}
+
+.description {
+  font-size: 0.9375rem;
+  color: $text-secondary;
+  line-height: 1.7;
+}
+
+// --- Missions ---
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-2;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: $sp-3;
+  font-size: 0.9375rem;
+  color: $text-secondary;
+
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: $r-full;
+    background: $gradient-primary;
+    flex-shrink: 0;
+  }
+}
+
+// --- Liens ---
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $sp-3;
+  padding-top: $sp-3;
+  border-top: 1px solid $border;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: $sp-2;
+  padding: $sp-2 $sp-4;
+  border: 1px solid $border-hover;
+  border-radius: $r-full;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: $violet-light;
+  transition: all $t-base;
+  @include focus-ring;
+  @include no-motion { transition: none; }
+
+  &:hover {
+    background: rgba($violet, 0.1);
+    border-color: $violet;
+    transform: translateY(-1px);
+  }
+}

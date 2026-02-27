@@ -1,0 +1,189 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.skills {
+  @include section-pad;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    right: -200px;
+    transform: translateY(-50%);
+    background: radial-gradient(circle, rgba($cyan, 0.08) 0%, transparent 70%);
+    border-radius: $r-full;
+    pointer-events: none;
+  }
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-10;
+}
+
+// --- En-tête ---
+.header {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-4;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: $cyan;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.title {
+  @include section-title;
+}
+
+.titleAccent {
+  @include gradient-text;
+}
+
+.subtitle {
+  font-size: 1.0625rem;
+  color: $text-muted;
+  line-height: 1.6;
+}
+
+// --- Filtres — scroll horizontal sur mobile ---
+.filters {
+  display: flex;
+  gap: $sp-2;
+  // Scroll horizontal fluide sur mobile
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: $sp-1;
+  padding-right: $sp-4;
+
+  &::-webkit-scrollbar { display: none; }
+
+  // Wrap sur desktop
+  @include respond-to(md) {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+}
+
+.filter {
+  padding: $sp-2 $sp-4;
+  border-radius: $r-full;
+  border: 1px solid $border;
+  background: transparent;
+  color: $text-muted;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all $t-fast;
+  white-space: nowrap; // Empêche le retour à la ligne
+  flex-shrink: 0;
+  @include focus-ring;
+
+  @include no-motion { transition: none; }
+
+  &:hover {
+    border-color: rgba($violet, 0.4);
+    color: $text-primary;
+    background: rgba($violet, 0.06);
+  }
+
+  &.filterActive {
+    background: $gradient-primary;
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 0 14px rgba($violet, 0.35);
+  }
+}
+
+// --- Grille ---
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $sp-2;
+
+  @include respond-to(sm)  { grid-template-columns: repeat(3, 1fr); gap: $sp-3; }
+  @include respond-to(md)  { grid-template-columns: repeat(4, 1fr); }
+  @include respond-to(lg)  { grid-template-columns: repeat(5, 1fr); }
+}
+
+// --- Carte compétence — compacte sur mobile ---
+.card {
+  @include glass;
+  border-radius: $r-md;
+  padding: $sp-4 $sp-3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $sp-2;
+  text-align: center;
+  cursor: default;
+  transition: all $t-base;
+  @include no-motion { transition: none; }
+
+  @include respond-to(md) {
+    border-radius: $r-lg;
+    padding: $sp-5 $sp-4;
+  }
+
+  &:hover {
+    border-color: rgba($violet, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba($violet, 0.15);
+  }
+}
+
+.icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba($violet, 0.2));
+
+  @include respond-to(md) { font-size: 2rem; }
+}
+
+.iconImg {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba($violet, 0.3));
+
+  @include respond-to(md) { width: 2.5rem; height: 2.5rem; }
+}
+
+.name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $text-primary;
+
+  @include respond-to(md) { font-size: 0.8125rem; }
+}
+
+// --- Badge catégorie — caché sur mobile pour alléger ---
+.badge {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  padding: 2px $sp-2;
+  border-radius: $r-full;
+  text-transform: capitalize;
+  letter-spacing: 0.04em;
+  display: none;
+
+  @include respond-to(md) { display: inline-block; }
+}
+
+.badge_design    { background: rgba($violet, 0.15); color: $violet-light; }
+.badge_dev       { background: rgba($cyan, 0.15);   color: $cyan-light; }
+.badge_marketing { background: rgba($gold, 0.15);   color: $gold-light; }
+.badge_business  { background: rgba($orange, 0.15); color: $orange-light; }

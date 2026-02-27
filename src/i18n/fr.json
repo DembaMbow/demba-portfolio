@@ -1,0 +1,148 @@
+{
+  "nav": {
+    "about": "À propos",
+    "skills": "Compétences",
+    "services": "Services",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "contact": "Contact",
+    "cta": "Travaillons ensemble"
+  },
+  "hero": {
+    "badge": "Disponible pour de nouveaux projets",
+    "greeting": "Bonjour, je suis",
+    "description": "Passionné par la photographie, la vidéographie et le design web, j'utilise l'image pour raconter des histoires et créer des expériences digitales qui ont du sens. Basé à",
+    "location": "Rouen, France",
+    "btnProjects": "Voir mes projets",
+    "btnContact": "Me contacter",
+    "roles": ["Créateur Digital", "UI/UX Designer", "Stratège Web", "Fondateur de Perform Digital"]
+  },
+  "about": {
+    "eyebrow": "01 — À propos",
+    "titleLine1": "Créateur digital,",
+    "titleAccent": "humain avant tout",
+    "statYears": "Années d'expérience",
+    "statProjects": "Projets réalisés",
+    "statClients": "Clients satisfaits",
+    "bio1": "Créateur digital passionné, je fais de l'image un vecteur de narration et d'émotion. Mon parcours unique — entre soutien aux personnes en situation de handicap et formation en marketing digital à",
+    "bio1School": "Need for School",
+    "bio1End": "— nourrit une approche humaine et inclusive du design.",
+    "bio2Start": "Aujourd'hui, je suis l'architecte de",
+    "bio2Mid": ", une agence digitale dédiée à la création de sites web, au design UI/UX et à la stratégie de visibilité en ligne.",
+    "bio3": "Ma promesse : répondre à chaque projet avec un délai de",
+    "bio3Time": "24 à 48 heures",
+    "bio3End": "et un engagement total pour la qualité, l'accessibilité et l'impact.",
+    "cvBtn": "Télécharger mon CV",
+    "valuesTitle": "Mes valeurs fondamentales"
+  },
+  "skills": {
+    "eyebrow": "02 — Compétences",
+    "title": "Mon arsenal",
+    "titleAccent": "technique & créatif",
+    "subtitle": "Des outils maîtrisés pour concevoir, développer et promouvoir vos projets digitaux.",
+    "filterAll": "Tous",
+    "filterDesign": "Design",
+    "filterDev": "Développement",
+    "filterMarketing": "Marketing",
+    "filterBusiness": "Business"
+  },
+  "services": {
+    "eyebrow": "03 — Services",
+    "title": "Ce que je",
+    "titleAccent": "propose",
+    "subtitle": "Des solutions digitales sur mesure pour donner vie à vos idées et booster votre présence en ligne.",
+    "ctaText": "Vous avez un projet ? Discutons-en !",
+    "ctaBtn": "Parlons de votre projet →",
+    "items": [
+      {
+        "title": "Web Design & Développement",
+        "description": "Création de sites web modernes, clairs et performants. Des interfaces qui convertissent et inspirent confiance."
+      },
+      {
+        "title": "UI/UX Design",
+        "description": "Interfaces intuitives centrées sur l'utilisateur. Parcours optimisé, expérience mémorable."
+      },
+      {
+        "title": "SEO & Stratégie Digitale",
+        "description": "Amélioration de votre visibilité en ligne et de votre positionnement sur les moteurs de recherche."
+      },
+      {
+        "title": "Design Graphique",
+        "description": "Créations visuelles impactantes : affiches, bannières, cartes de visite, supports print et digital."
+      },
+      {
+        "title": "Identité de Marque",
+        "description": "Logo, charte graphique, couleurs et systèmes visuels cohérents qui définissent votre ADN."
+      },
+      {
+        "title": "Création assistée par IA",
+        "description": "Utilisation de l'intelligence artificielle (ChatGPT, Midjourney) pour accélérer la création de contenus, de visuels et de stratégies digitales."
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": "04 — Projets",
+    "title": "Mes",
+    "titleAccent": "réalisations",
+    "subtitle": "Un aperçu de mes projets — du branding à l'interface web en passant par le design graphique.",
+    "filterAll": "Tous",
+    "viewProject": "Voir le projet",
+    "viewSite": "Voir le site",
+    "note": "Vous avez un projet similaire ? Parlons-en !",
+    "noteLink": "Contactez-moi"
+  },
+  "experience": {
+    "eyebrow": "05 — Expérience",
+    "title": "Mon parcours",
+    "titleAccent": "professionnel"
+  },
+  "contact": {
+    "eyebrow": "06 — Contact",
+    "title": "Démarrons votre",
+    "titleAccent": "projet ensemble",
+    "subtitle": "Une idée, une question, un projet ? Écrivez-moi. Je m'engage à vous répondre sous",
+    "subtitleTime": "24 à 48 heures",
+    "infoTitle": "Me trouver",
+    "labelPhone": "Téléphone / WhatsApp",
+    "labelLocation": "Localisation",
+    "fieldName": "Votre nom",
+    "fieldEmail": "Votre email",
+    "fieldSubject": "Sujet",
+    "fieldMessage": "Votre message",
+    "placeholderName": "Votre nom complet",
+    "placeholderSubject": "Choisissez un sujet",
+    "placeholderMessage": "Décrivez votre projet, vos besoins, votre budget estimé...",
+    "subjectOptions": ["Me recruter", "Web Design & Développement", "UI/UX Design", "SEO & Stratégie Digitale", "Identité de Marque", "Autre"],
+    "required": "Champs obligatoires",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours…",
+    "successTitle": "Message envoyé !",
+    "successText": "Merci pour votre message. Je vous répondrai dans les 24 à 48 heures.",
+    "successBtn": "Envoyer un autre message",
+    "errorText": "Une erreur est survenue. Veuillez réessayer.",
+    "chars": "caractère",
+    "charsPlural": "caractères"
+  },
+  "values": [
+    { "title": "Inclusion & Humanité", "description": "Mon parcours auprès des personnes en situation de handicap nourrit chaque décision créative." },
+    { "title": "Impact & Sens", "description": "Chaque projet doit créer une valeur réelle, pas seulement esthétique." },
+    { "title": "Apprentissage Continu", "description": "Le digital évolue vite — je m'adapte et me forme en permanence." },
+    { "title": "Design Accessible", "description": "Concevoir pour tous, sans exception, est une exigence, pas une option." }
+  ],
+  "footer": {
+    "tagline1": "Créateur digital passionné.",
+    "tagline2": "Basé à Rouen, actif partout.",
+    "navigation": "Navigation",
+    "copyright": "Tous droits réservés.",
+    "mention": "Conçu avec passion en React · TypeScript · SASS",
+    "backTop": "Retour en haut de page"
+  },
+  "validation": {
+    "nameRequired": "Votre nom est requis.",
+    "emailRequired": "Votre email est requis.",
+    "emailInvalid": "Veuillez entrer un email valide.",
+    "subjectRequired": "Un sujet est requis.",
+    "messageRequired": "Votre message est requis.",
+    "messageTooShort": "Le message doit faire au moins 20 caractères."
+  }
+}

@@ -1,0 +1,369 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // Mobile : padding réduit
+  padding-block: $sp-20 $sp-12;
+  overflow: hidden;
+
+  @include respond-to(md) {
+    padding-block: $sp-32 $sp-16;
+  }
+}
+
+// --- Fond décoratif ---
+.bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.glow1 {
+  position: absolute;
+  // Réduit sur mobile pour alléger le rendu
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba($violet, 0.2) 0%, transparent 70%);
+  border-radius: $r-full;
+
+  @include respond-to(md) {
+    width: 600px;
+    height: 600px;
+    top: -200px;
+  }
+
+  @include no-motion { animation: none; }
+}
+
+.glow2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  bottom: -60px;
+  right: -60px;
+  overflow: hidden;
+  background: radial-gradient(circle, rgba($cyan, 0.12) 0%, transparent 70%);
+  border-radius: $r-full;
+
+  @include respond-to(md) {
+    width: 400px;
+    height: 400px;
+    bottom: -100px;
+    right: -100px;
+  }
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 40%, transparent 100%);
+}
+
+// Orbes cachées sur mobile
+.orb1, .orb2 { display: none; }
+
+@include respond-to(lg) {
+  .orb1 {
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 20%;
+    left: 5%;
+    border: 1px solid rgba($violet, 0.2);
+    border-radius: $r-full;
+    animation: float1 8s ease-in-out infinite;
+    @include no-motion { animation: none; }
+  }
+
+  .orb2 {
+    display: block;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    bottom: 25%;
+    right: 8%;
+    border: 1px solid rgba($cyan, 0.2);
+    border-radius: $r-full;
+    animation: float2 6s ease-in-out infinite;
+    @include no-motion { animation: none; }
+  }
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-20px) rotate(10deg); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(20px) rotate(-10deg); }
+}
+
+// --- Contenu ---
+.content {
+  position: relative;
+  @include container;
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // Espacement réduit sur mobile
+  gap: $sp-4;
+
+  @include respond-to(md) {
+    gap: $sp-6;
+  }
+}
+
+// --- Badge disponible ---
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $sp-2;
+  padding: $sp-2 $sp-3;
+  background: rgba($success, 0.1);
+  border: 1px solid rgba($success, 0.25);
+  border-radius: $r-full;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: $success-light;
+  letter-spacing: 0.02em;
+
+  @include respond-to(md) {
+    font-size: 0.8125rem;
+    padding: $sp-2 $sp-4;
+  }
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  background: $success;
+  border-radius: $r-full;
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+  @include no-motion { animation: none; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(0.85); }
+}
+
+// --- Titre ---
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-1;
+
+  @include respond-to(md) {
+    gap: $sp-2;
+  }
+}
+
+.greeting {
+  display: block;
+  font-size: clamp(0.75rem, 3vw, 1.1rem);
+  font-weight: 400;
+  color: $text-muted;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.name {
+  display: block;
+  font-size: clamp(2.75rem, 10vw, 6.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  @include gradient-text;
+}
+
+// --- Rôle animé ---
+.role {
+  font-family: $font-heading;
+  font-size: clamp(1rem, 4vw, 1.75rem);
+  font-weight: 500;
+  color: $text-secondary;
+  min-height: 1.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.roleText {
+  color: $text-primary;
+}
+
+.cursor {
+  color: $violet-light;
+  animation: blink 1s step-end infinite;
+  @include no-motion { animation: none; opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+// --- Description — cachée sur très petit écran ---
+.description {
+  max-width: 520px;
+  font-size: clamp(0.875rem, 2vw, 1.0625rem);
+  line-height: 1.7;
+  color: $text-secondary;
+
+  // Cachée uniquement sur très petits écrans < 360px
+  @media (max-width: 360px) { display: none; }
+
+  strong { color: $text-primary; font-weight: 600; }
+}
+
+// --- Actions — pleine largeur sur mobile ---
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-3;
+  width: 100%;
+  padding-inline: $sp-2;
+
+  @include respond-to(sm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    padding-inline: 0;
+  }
+}
+
+.btnPrimary {
+  @include btn-base;
+  background: $gradient-primary;
+  color: white;
+  font-weight: 600;
+  padding: $sp-4 $sp-6;
+  box-shadow: 0 0 20px rgba($violet, 0.35);
+  justify-content: center;
+
+  // Pas d'emoji sur mobile
+  .btnEmoji { display: none; }
+
+  @include respond-to(sm) {
+    padding: $sp-4 $sp-8;
+    .btnEmoji { display: inline; }
+  }
+
+  &:hover {
+    box-shadow: 0 0 40px rgba($violet, 0.6);
+    transform: translateY(-2px);
+  }
+}
+
+.btnSecondary {
+  @include btn-base;
+  background: transparent;
+  color: $text-primary;
+  border: 1px solid $border;
+  padding: $sp-4 $sp-6;
+  justify-content: center;
+
+  .btnEmoji { display: none; }
+
+  @include respond-to(sm) {
+    padding: $sp-4 $sp-8;
+    .btnEmoji { display: inline; }
+  }
+
+  &:hover {
+    border-color: $border-hover;
+    background: $bg-card;
+    transform: translateY(-2px);
+  }
+}
+
+// --- Liens sociaux — icônes seules sur mobile ---
+.socials {
+  display: flex;
+  gap: $sp-3;
+  justify-content: center;
+  margin-top: $sp-1;
+}
+
+.socialLink {
+  @include flex-center;
+  width: 44px;
+  height: 44px;
+  border-radius: $r-full;
+  color: $text-muted;
+  border: 1px solid $border;
+  transition: all $t-fast;
+  @include focus-ring;
+  @include no-motion { transition: none; }
+
+  // Texte masqué sur mobile, affiché sur desktop
+  .socialLabel {
+    display: none;
+  }
+
+  // Sur desktop : afficher le texte avec padding adapté
+  @include respond-to(md) {
+    width: auto;
+    height: auto;
+    gap: $sp-2;
+    padding: $sp-2 $sp-4;
+    border-radius: $r-full;
+
+    .socialLabel { display: inline; }
+  }
+
+  &:hover {
+    color: $text-primary;
+    border-color: rgba($violet, 0.4);
+    background: $bg-card;
+  }
+}
+
+// --- Scroll indicator — caché sur petits écrans ---
+.scrollIndicator {
+  position: absolute;
+  bottom: $sp-5;
+  left: 50%;
+  transform: translateX(-50%);
+  @include flex-center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid $border;
+  border-radius: $r-full;
+  color: $text-muted;
+  font-size: 0.875rem;
+  animation: bounce 2.5s ease-in-out infinite;
+  transition: all $t-fast;
+  @include focus-ring;
+
+  @media (max-height: 600px) { display: none; }
+
+  &:hover { border-color: rgba($violet, 0.4); color: $violet-light; }
+
+  @include no-motion { animation: none; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}

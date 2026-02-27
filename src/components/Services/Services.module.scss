@@ -1,0 +1,215 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.services {
+  @include section-pad;
+  background: $bg-secondary;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 0% 50%, rgba($violet, 0.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-8;
+
+  @include respond-to(md) { gap: $sp-12; }
+}
+
+// --- En-tête ---
+.header {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-4;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: $gold;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.title {
+  @include section-title;
+}
+
+.titleAccent {
+  @include gradient-text;
+}
+
+.subtitle {
+  font-size: 1.0625rem;
+  color: $text-muted;
+  line-height: 1.7;
+}
+
+// --- Grille ---
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $sp-4;
+
+  @include respond-to(md) { grid-template-columns: repeat(2, 1fr); }
+  @include respond-to(lg) { grid-template-columns: repeat(3, 1fr); }
+}
+
+// --- Carte service ---
+.card {
+  @include glass;
+  border-radius: $r-lg;
+  padding: $sp-5;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-3;
+  position: relative;
+  overflow: hidden;
+  transition: all $t-base;
+  @include no-motion { transition: none; }
+
+  @include respond-to(md) {
+    border-radius: $r-xl;
+    padding: $sp-8;
+    gap: $sp-4;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: $gradient-primary;
+    opacity: 0;
+    transition: opacity $t-base;
+    @include no-motion { transition: none; }
+  }
+
+  &:hover {
+    border-color: rgba($violet, 0.3);
+    transform: translateY(-6px);
+    box-shadow: $shadow-glow;
+
+    &::before { opacity: 1; }
+
+    .arrow {
+      transform: translateX(4px);
+      color: $violet-light;
+    }
+  }
+}
+
+.number {
+  position: absolute;
+  top: $sp-3;
+  right: $sp-4;
+  font-family: $font-heading;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.03);
+  line-height: 1;
+  user-select: none;
+
+  @include respond-to(md) { font-size: 3.5rem; top: $sp-4; right: $sp-5; }
+}
+
+.iconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: $r-sm;
+  background: rgba($violet, 0.12);
+  border: 1px solid rgba($violet, 0.2);
+  @include flex-center;
+  flex-shrink: 0;
+
+  @include respond-to(md) { width: 52px; height: 52px; border-radius: $r-md; }
+}
+
+.icon {
+  font-size: 1.25rem;
+  line-height: 1;
+
+  @include respond-to(md) { font-size: 1.5rem; }
+}
+
+.cardTitle {
+  font-family: $font-heading;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: $text-primary;
+  line-height: 1.3;
+}
+
+.cardDesc {
+  font-size: 0.9375rem;
+  color: $text-muted;
+  line-height: 1.7;
+  flex: 1;
+}
+
+.cardFooter {
+  padding-top: $sp-2;
+  border-top: 1px solid $border;
+}
+
+.arrow {
+  display: inline-block;
+  font-size: 1.25rem;
+  color: $text-muted;
+  transition: all $t-fast;
+  @include no-motion { transition: none; }
+}
+
+// --- CTA section ---
+.cta {
+  @include flex-center;
+  flex-direction: column;
+  gap: $sp-4;
+  padding: $sp-8 $sp-5;
+  @include glass;
+  border-radius: $r-xl;
+  text-align: center;
+  background: linear-gradient(135deg, rgba($violet, 0.08), rgba($cyan, 0.05));
+  border-color: rgba($violet, 0.2);
+
+  @include respond-to(md) { gap: $sp-5; padding: $sp-10; border-radius: $r-2xl; }
+}
+
+.ctaText {
+  font-size: 1.25rem;
+  font-family: $font-heading;
+  font-weight: 500;
+  color: $text-secondary;
+}
+
+.ctaBtn {
+  @include btn-base;
+  background: $gradient-primary;
+  color: white;
+  font-weight: 600;
+  padding: $sp-4 $sp-6;
+  font-size: 1rem;
+  box-shadow: 0 0 24px rgba($violet, 0.35);
+  width: 100%;
+  justify-content: center;
+
+  @include respond-to(sm) { padding: $sp-4 $sp-10; width: auto; }
+
+  &:hover {
+    box-shadow: 0 0 40px rgba($violet, 0.55);
+    transform: translateY(-2px);
+  }
+}

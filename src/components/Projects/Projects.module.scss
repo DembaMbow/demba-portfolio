@@ -1,0 +1,265 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.projects {
+  @include section-pad;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    bottom: -200px;
+    left: -200px;
+    background: radial-gradient(circle, rgba($violet, 0.06) 0%, transparent 70%);
+    border-radius: $r-full;
+    pointer-events: none;
+  }
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-10;
+  position: relative;
+}
+
+// --- En-tête ---
+.header {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-4;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: $orange;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.title {
+  @include section-title;
+}
+
+.titleAccent {
+  @include gradient-text;
+}
+
+.subtitle {
+  font-size: 1.0625rem;
+  color: $text-muted;
+  line-height: 1.7;
+}
+
+// --- Filtres — scroll horizontal sur mobile ---
+.filters {
+  display: flex;
+  gap: $sp-2;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: $sp-1;
+  padding-right: $sp-4;
+
+  &::-webkit-scrollbar { display: none; }
+
+  @include respond-to(md) {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+}
+
+.filter {
+  padding: $sp-2 $sp-4;
+  border-radius: $r-full;
+  border: 1px solid $border;
+  background: transparent;
+  color: $text-muted;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all $t-fast;
+  white-space: nowrap;
+  flex-shrink: 0;
+  @include focus-ring;
+
+  @include no-motion { transition: none; }
+
+  &:hover {
+    border-color: rgba($violet, 0.4);
+    color: $text-primary;
+    background: rgba($violet, 0.06);
+  }
+
+  &.filterActive {
+    background: $gradient-primary;
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 0 14px rgba($violet, 0.35);
+  }
+}
+
+// --- Grille ---
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $sp-4;
+
+  @include respond-to(sm)  { grid-template-columns: repeat(2, 1fr); }
+  @include respond-to(md)  { grid-template-columns: repeat(3, 1fr); gap: $sp-5; }
+}
+
+// --- Carte projet ---
+.card {
+  @include glass;
+  border-radius: $r-xl;
+  overflow: hidden;
+  transition: all $t-base;
+  @include no-motion { transition: none; }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 32px rgba(var(--accent-rgb, 124,58,237), 0.12);
+    border-color: rgba(124, 58, 237, 0.3);
+  }
+}
+
+// --- Visuel ---
+.visual {
+  position: relative;
+  background: $bg-secondary;
+  overflow: hidden;
+  height: 220px;
+
+  @include respond-to(md) { height: 240px; }
+  @include respond-to(xl) { height: 260px; }
+}
+
+.projectImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center center;
+  transition: transform 0.4s ease;
+
+  @include no-motion { transition: none; }
+}
+
+.card:hover .projectImg {
+  transform: scale(1.03);
+}
+
+.visualOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    rgba(0, 0, 0, 0.2)
+  );
+  pointer-events: none;
+}
+
+// --- Contenu ---
+.cardBody {
+  padding: $sp-4;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-2;
+
+  @include respond-to(md) { padding: $sp-5; gap: $sp-3; }
+}
+
+.category {
+  display: inline-block;
+  width: fit-content;
+  padding: $sp-1 $sp-3;
+  border-radius: $r-full;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: color-mix(in srgb, var(--accent, #{$violet}) 15%, transparent);
+  color: var(--accent, #{$violet-light});
+  border: 1px solid color-mix(in srgb, var(--accent, #{$violet}) 30%, transparent);
+}
+
+.cardTitle {
+  font-family: $font-heading;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: $text-primary;
+  line-height: 1.3;
+}
+
+.cardDesc {
+  font-size: 0.875rem;
+  color: $text-muted;
+  line-height: 1.65;
+}
+
+// --- Tags ---
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $sp-2;
+  margin-top: $sp-1;
+}
+
+.tag {
+  padding: $sp-1 $sp-3;
+  border-radius: $r-full;
+  border: 1px solid $border;
+  font-size: 0.75rem;
+  color: $text-muted;
+  font-weight: 500;
+}
+
+// --- Lien projet ---
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: $sp-2;
+  margin-top: $sp-2;
+  padding: $sp-2 $sp-4;
+  border: 1px solid $border-hover;
+  border-radius: $r-full;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: $violet-light;
+  transition: all $t-base;
+  @include focus-ring;
+  @include no-motion { transition: none; }
+
+  &:hover {
+    background: rgba($violet, 0.1);
+    border-color: $violet;
+    transform: translateY(-1px);
+  }
+}
+
+// --- Note ---
+.note {
+  text-align: center;
+  font-size: 0.9375rem;
+  color: $text-muted;
+  padding: $sp-4;
+}
+
+.noteLink {
+  color: $violet-light;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  @include focus-ring;
+
+  &:hover { color: $cyan-light; }
+}

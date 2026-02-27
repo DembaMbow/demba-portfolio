@@ -1,0 +1,299 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.about {
+  @include section-pad;
+  background: $bg-secondary;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: $gradient-primary;
+    opacity: 0.3;
+  }
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-10;
+
+  @include respond-to(md) { gap: $sp-16; }
+}
+
+// --- En-tête ---
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-4;
+  max-width: 600px;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: $violet-light;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.title {
+  @include section-title;
+  line-height: 1.15;
+}
+
+.titleAccent {
+  @include gradient-text;
+}
+
+// --- Grille principale ---
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $sp-8;
+
+  @include respond-to(lg) {
+    grid-template-columns: 400px 1fr;
+    align-items: start;
+  }
+}
+
+// --- Avatar ---
+.avatarWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-6;
+}
+
+.avatarFrame {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+
+  @include respond-to(md) { max-width: 360px; }
+}
+
+.avatarInner {
+  width: 100%;
+  height: 100%;
+  border-radius: $r-2xl;
+  background: linear-gradient(135deg, rgba($violet, 0.15), rgba($cyan, 0.1));
+  border: 1px solid $border;
+  @include flex-center;
+  font-size: 8rem;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba($violet, 0.05), transparent);
+  }
+}
+
+.avatarPhoto {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: $r-2xl;
+}
+
+.deco1 {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba($cyan, 0.3);
+  border-radius: $r-lg;
+  transform: rotate(15deg);
+}
+
+.deco2 {
+  position: absolute;
+  bottom: -16px;
+  left: -16px;
+  width: 60px;
+  height: 60px;
+  background: rgba($violet, 0.15);
+  border: 1px solid rgba($violet, 0.3);
+  border-radius: $r-md;
+  transform: rotate(-10deg);
+}
+
+.deco3 {
+  position: absolute;
+  bottom: $sp-4;
+  right: $sp-4;
+  background: $gradient-primary;
+  color: white;
+  padding: $sp-2 $sp-3;
+  border-radius: $r-sm;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+// --- Stats ---
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $sp-2;
+
+  @include respond-to(md) { gap: $sp-4; }
+}
+
+.statItem {
+  text-align: center;
+  padding: $sp-3 $sp-2;
+  @include glass;
+  border-radius: $r-md;
+
+  @include respond-to(md) { padding: $sp-4; }
+}
+
+.statValue {
+  display: block;
+  font-family: $font-heading;
+  font-size: 1.375rem;
+  font-weight: 700;
+  @include gradient-text;
+  line-height: 1.1;
+
+  @include respond-to(md) { font-size: 1.75rem; }
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.6875rem;
+  color: $text-muted;
+  margin-top: $sp-1;
+  line-height: 1.3;
+
+  @include respond-to(md) { font-size: 0.75rem; }
+}
+
+// --- Bio ---
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-5;
+}
+
+.bioPara {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: $text-secondary;
+
+  strong { color: $text-primary; font-weight: 600; }
+}
+
+.link {
+  color: $violet-light;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color $t-fast;
+
+  &:hover { color: $cyan-light; }
+  @include focus-ring;
+}
+
+.cvLink {
+  display: inline-flex;
+  align-items: center;
+  gap: $sp-2;
+  width: fit-content;
+  margin-top: $sp-2;
+  padding: $sp-3 $sp-6;
+  border: 1px solid $border-hover;
+  border-radius: $r-full;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: $violet-light;
+  transition: all $t-base;
+  @include focus-ring;
+
+  @include no-motion { transition: none; }
+
+  &:hover {
+    background: rgba($violet, 0.1);
+    border-color: $violet;
+    transform: translateY(-2px);
+  }
+}
+
+// --- Valeurs ---
+.valuesSection {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-8;
+}
+
+.valuesTitle {
+  font-family: $font-heading;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $text-secondary;
+  text-align: center;
+}
+
+.valuesList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $sp-3;
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $sp-4;
+  }
+}
+
+.valueCard {
+  @include glass;
+  border-radius: $r-lg;
+  padding: $sp-4;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-2;
+  transition: border-color $t-base, transform $t-base;
+  @include no-motion { transition: none; }
+
+  @include respond-to(md) { padding: $sp-6; gap: $sp-3; }
+
+  &:hover {
+    border-color: $border-hover;
+    transform: translateY(-4px);
+  }
+}
+
+.valueIcon {
+  font-size: 1.5rem;
+  line-height: 1;
+
+  @include respond-to(md) { font-size: 2rem; }
+}
+
+.valueName {
+  font-family: $font-heading;
+  font-size: 1rem;
+  font-weight: 600;
+  color: $text-primary;
+}
+
+.valueDesc {
+  font-size: 0.875rem;
+  color: $text-muted;
+  line-height: 1.6;
+}

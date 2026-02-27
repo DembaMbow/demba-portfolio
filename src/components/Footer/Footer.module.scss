@@ -1,0 +1,158 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  background: $bg-primary;
+  border-top: 1px solid $border;
+  padding-block: $sp-10 $sp-6;
+
+  @include respond-to(md) { padding-block: $sp-16 $sp-8; }
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $sp-8;
+}
+
+// --- Top ---
+.top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $sp-10;
+
+  @include respond-to(md) {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: $sp-12;
+  }
+}
+
+// --- Brand ---
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-4;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: $sp-3;
+  width: fit-content;
+  @include focus-ring;
+}
+
+.logoMark {
+  width: 40px;
+  height: 40px;
+  border-radius: $r-sm;
+  background: $gradient-primary;
+  @include flex-center;
+  font-family: $font-heading;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: white;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.logoName {
+  font-family: $font-heading;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: $text-primary;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: $text-muted;
+  line-height: 1.65;
+}
+
+// --- Navigation ---
+.navTitle {
+  font-family: $font-heading;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: $sp-4;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-3;
+}
+
+.navLink {
+  font-size: 0.9375rem;
+  color: $text-muted;
+  transition: color $t-fast;
+  @include focus-ring;
+
+  &:hover { color: $violet-light; }
+
+  @include no-motion { transition: none; }
+}
+
+// --- Contact ---
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-3;
+}
+
+.contactLink {
+  font-size: 0.9375rem;
+  color: $text-muted;
+  transition: color $t-fast;
+  word-break: break-all;
+  @include focus-ring;
+
+  &:hover { color: $text-primary; }
+
+  @include no-motion { transition: none; }
+}
+
+// --- Divider ---
+.divider {
+  height: 1px;
+  background: $border;
+}
+
+// --- Bottom ---
+.bottom {
+  @include flex-between;
+  flex-wrap: wrap;
+  gap: $sp-4;
+}
+
+.copyright,
+.mention {
+  font-size: 0.8125rem;
+  color: $text-muted;
+}
+
+// --- Retour en haut ---
+.backTop {
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid $border;
+  border-radius: $r-full;
+  color: $text-muted;
+  transition: all $t-fast;
+  flex-shrink: 0;
+  @include focus-ring;
+
+  &:hover {
+    border-color: rgba($violet, 0.4);
+    color: $violet-light;
+    background: rgba($violet, 0.08);
+  }
+
+  @include no-motion { transition: none; }
+}
