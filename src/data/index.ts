@@ -80,7 +80,7 @@ export const projects: Project[] = [
     category: 'Événementiel',
     tags: ['Affiche', 'Événement', 'Photoshop'],
     color: '#10B981',
-    image: '/projects/naza-night.png',
+    image: '/projects/naza-night.webp',
   },
   {
     id: 2,
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     category: 'Invitation',
     tags: ['Mariage', 'Invitation', 'Print'],
     color: '#EC4899',
-    image: '/projects/mariage-paul-julie.png',
+    image: '/projects/mariage-paul-julie.webp',
   },
   {
     id: 7,
