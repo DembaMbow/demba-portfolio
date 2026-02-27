@@ -87,6 +87,12 @@ ul, ol {
   @include sr-only;
 }
 
+// --- Sections hors viewport : skip layout/paint jusqu'à apparition ---
+#about, #skills, #services, #projects, #experience, #contact {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
 // --- Animation d'apparition par scroll ---
 .reveal {
   opacity: 0;

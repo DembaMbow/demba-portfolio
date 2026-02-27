@@ -32,9 +32,10 @@
   height: 300px;
   top: -100px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateZ(0);
   background: radial-gradient(circle, rgba($violet, 0.2) 0%, transparent 70%);
   border-radius: $r-full;
+  will-change: transform;
 
   @include respond-to(md) {
     width: 600px;
@@ -54,6 +55,8 @@
   overflow: hidden;
   background: radial-gradient(circle, rgba($cyan, 0.12) 0%, transparent 70%);
   border-radius: $r-full;
+  will-change: transform;
+  transform: translateZ(0);
 
   @include respond-to(md) {
     width: 400px;
@@ -71,6 +74,7 @@
     linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
   background-size: 40px 40px;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 40%, transparent 100%);
+  transform: translateZ(0);
 }
 
 // Orbes cachées sur mobile
@@ -87,6 +91,7 @@
     border: 1px solid rgba($violet, 0.2);
     border-radius: $r-full;
     animation: float1 8s ease-in-out infinite;
+    will-change: transform;
     @include no-motion { animation: none; }
   }
 
@@ -100,6 +105,7 @@
     border: 1px solid rgba($cyan, 0.2);
     border-radius: $r-full;
     animation: float2 6s ease-in-out infinite;
+    will-change: transform;
     @include no-motion { animation: none; }
   }
 }
@@ -157,6 +163,7 @@
   border-radius: $r-full;
   animation: pulse 2s ease-in-out infinite;
   flex-shrink: 0;
+  will-change: transform, opacity;
   @include no-motion { animation: none; }
 }
 
@@ -214,6 +221,7 @@
 .cursor {
   color: $violet-light;
   animation: blink 1s step-end infinite;
+  will-change: opacity;
   @include no-motion { animation: none; opacity: 1; }
 }
 
@@ -354,6 +362,7 @@
   font-size: 0.875rem;
   animation: bounce 2.5s ease-in-out infinite;
   transition: all $t-fast;
+  will-change: transform;
   @include focus-ring;
 
   @media (max-height: 600px) { display: none; }
