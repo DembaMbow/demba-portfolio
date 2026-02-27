@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { SkipLink } from './components/SkipLink/SkipLink';
 import { Header }   from './components/Header/Header';
 import { Hero }     from './components/Hero/Hero';
@@ -7,8 +7,9 @@ import { Skills }   from './components/Skills/Skills';
 import { Services } from './components/Services/Services';
 import { Projects }    from './components/Projects/Projects';
 import { Experience }  from './components/Experience/Experience';
-import { Contact }     from './components/Contact/Contact';
 import { Footer }   from './components/Footer/Footer';
+
+const Contact = lazy(() => import('./components/Contact/Contact').then(m => ({ default: m.Contact })));
 
 export default function App() {
   // Ajouter les classes reveal PUIS lancer l'observateur dans le même effet
@@ -53,7 +54,9 @@ export default function App() {
         <Services />
         <Projects />
         <Experience />
-        <Contact />
+        <Suspense fallback={null}>
+          <Contact />
+        </Suspense>
       </main>
 
       <Footer />

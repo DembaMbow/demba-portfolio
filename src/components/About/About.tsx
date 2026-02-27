@@ -21,7 +21,7 @@ export function About() {
           <div className={styles.avatarWrapper}>
             <div className={styles.avatarFrame}>
               <div className={styles.avatarInner}>
-                <img src="/demba-assis-pc.webp" alt="Demba Mbow" className={styles.avatarPhoto} />
+                <img src="/demba-assis-pc.webp" alt="Demba Mbow" className={styles.avatarPhoto} fetchPriority="high" />
               </div>
               <div className={styles.deco1} />
               <div className={styles.deco2} />
