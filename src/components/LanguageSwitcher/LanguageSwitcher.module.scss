@@ -29,7 +29,15 @@
   }
 }
 
-.flag { font-size: 1rem; line-height: 1; }
+.flag {
+  display: block;
+  width: 24px;
+  height: 18px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  flex-shrink: 0;
+}
 .short { font-size: 0.75rem; letter-spacing: 0.05em; }
 
 .arrow {
