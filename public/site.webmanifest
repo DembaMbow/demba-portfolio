@@ -1,0 +1,33 @@
+{
+  "name": "Demba Mbow | Créateur Digital",
+  "short_name": "Demba Mbow",
+  "description": "Portfolio de Demba Mbow — Créateur digital, UI/UX Designer et stratège web basé en France.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06080F",
+  "theme_color": "#7C3AED",
+  "lang": "fr",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "design", "business"],
+  "screenshots": [
+    {
+      "src": "/og-image.svg",
+      "sizes": "1200x630",
+      "type": "image/svg+xml"
+    }
+  ]
+}

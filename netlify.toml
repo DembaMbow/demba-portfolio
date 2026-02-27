@@ -1,0 +1,64 @@
+# netlify.toml — Configuration Netlify pour dembambow.com
+
+# ─── SPA : rediriger toutes les routes vers index.html ───────────────────────
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
+
+# ─── Redirect www → non-www ───────────────────────────────────────────────────
+[[redirects]]
+  from   = "https://www.dembambow.com/*"
+  to     = "https://dembambow.com/:splat"
+  status = 301
+  force  = true
+
+# ─── Cache HTML : toujours revalider ─────────────────────────────────────────
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ─── Cache assets statiques : 1 an (hashed par Vite) ─────────────────────────
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ─── Cache images ─────────────────────────────────────────────────────────────
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ─── Cache fonts ──────────────────────────────────────────────────────────────
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ─── En-têtes de sécurité (toutes les pages) ─────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options            = "DENY"
+    X-Content-Type-Options     = "nosniff"
+    X-XSS-Protection           = "1; mode=block"
+    Referrer-Policy            = "strict-origin-when-cross-origin"
+    Permissions-Policy         = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security  = "max-age=31536000; includeSubDomains; preload"

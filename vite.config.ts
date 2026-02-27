@@ -6,10 +6,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        // Noms fixes pour faciliter les mises à jour WordPress
-        entryFileNames: 'assets/index.js',
-        chunkFileNames: 'assets/index.js',
-        assetFileNames: 'assets/index.[ext]',
+        // Hash automatique pour un cache navigateur optimal
+        manualChunks: {
+          vendor:  ['react', 'react-dom'],
+          i18n:    ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
+          emailjs: ['@emailjs/browser'],
+        },
       },
     },
   },
