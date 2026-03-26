@@ -31,6 +31,13 @@ export const skills: Skill[] = [
   { name: 'Midjourney / IA',    icon: 'https://cdn.simpleicons.org/midjourney/ffffff',          category: 'business' },
   { name: 'Branding',           icon: '💎',                                                     category: 'business' },
   { name: 'Stratégie Digitale', icon: '🚀',                                                     category: 'business' },
+  // Développement avancé
+  { name: 'React / TypeScript', icon: 'https://cdn.simpleicons.org/react/61DAFB',               category: 'dev' },
+  // IA & Innovation
+  { name: 'MCP Protocol',       icon: '🤖',                                                     category: 'business' },
+  { name: 'Claude AI',          icon: 'https://cdn.simpleicons.org/anthropic/ffffff',            category: 'business' },
+  // Accessibilité
+  { name: 'WCAG / A11y',        icon: '♿',                                                     category: 'dev' },
 ];
 
 export const services: Service[] = [
@@ -69,6 +76,18 @@ export const services: Service[] = [
     icon: '🤖',
     title: 'Création assistée par IA',
     description: 'Utilisation de l\'intelligence artificielle (ChatGPT, Midjourney) pour accélérer la création de contenus, de visuels et de stratégies digitales.',
+  },
+  {
+    id: 7,
+    icon: '⚙️',
+    title: 'Innovation & Architecture IA (MCP)',
+    description: 'Expert en pilotage d\'agents autonomes via le protocole MCP. Je connecte l\'IA aux données réelles de votre entreprise pour automatiser, livrer plus vite et sans erreurs.',
+  },
+  {
+    id: 8,
+    icon: '♿',
+    title: 'Accessibilité Web (WCAG)',
+    description: 'Audit et mise en conformité WCAG 2.1 AA. Sites inclusifs, utilisables par tous — automatisés par IA pour un rendu parfait en temps record.',
   },
 ];
 
@@ -171,15 +190,69 @@ export const contactInfo: ContactInfo = {
 export const experiences: Experience[] = [
   {
     id: 1,
-    role: 'Chargé d\'affaires — Communication & Image',
-    company: 'FTK FC',
-    period: '2024 — Présent',
-    description: 'Développement de la stratégie de communication et de l\'image du club FTK FC. Gestion des partenariats, production de contenus vidéo et pilotage de la visibilité digitale du club.',
+    role: 'Référent Accessibilité Numérique & Accompagnement',
+    company: 'Papillons Blancs 76 — Médico-Social',
+    period: '2025 — Présent',
+    description: 'Accompagnement de personnes en situation de handicap moteur et cognitif dans leurs usages numériques. Référent accessibilité numérique au sein d\'un établissement médico-social.',
     tasks: [
-      'Chargé d\'affaires & développement de partenariats',
-      'Communication digitale (réseaux sociaux, campagnes)',
-      'Gestion de l\'image et de la réputation du club',
-      'Filmage & production vidéo des matchs et événements',
+      'Analyse des usages digitaux pour des personnes avec handicap moteur et cognitif (User Research terrain)',
+      'Identification des points de blocage sur les interfaces web en situation réelle',
+      'Mise en place d\'ateliers numériques inclusifs et adaptés aux capacités des usagers',
+      'Référent accessibilité et conformité WCAG des outils numériques utilisés',
+    ],
+  },
+  {
+    id: 2,
+    role: 'Product Owner & Consultant Digital Indépendant',
+    company: 'dembambow.com — Portfolio & Accompagnement Entrepreneurs',
+    period: '2023 — Présent',
+    description: 'Pilotage de projets web de A à Z pour des entrepreneurs et PME. Expertise WCAG, stratégie SEO et création de sites performants sous WordPress.',
+    tasks: [
+      'Pilotage de projets web : définition du besoin, création WordPress et mise en ligne',
+      'Audit et mise en conformité WCAG 2.1 AA des sites clients',
+      'Stratégie SEO et rédaction de contenus optimisés pour la performance digitale',
+      'Conseil en identité visuelle, branding et présence digitale',
+    ],
+    links: [
+      { label: 'dembambow.com', url: 'https://dembambow.com' },
+      { label: 'Perform Digital', url: 'https://perform-digital.com' },
+    ],
+  },
+  {
+    id: 3,
+    role: 'Responsable de Groupe — Spécialiste Inclusion & Accessibilité',
+    company: 'Séjours Adaptés Handicap — CAP Picardie (6 séjours)',
+    period: '2022 — 2025',
+    description: 'Pilotage opérationnel de séjours pour groupes en situation de handicap multiple. Spécialiste de l\'inclusion et de la conception d\'activités adaptées.',
+    tasks: [
+      'Pilotage logistique, sécurité et budget de séjours pour groupes en situation de handicap multiple',
+      'Conception de parcours et d\'activités favorisant l\'autonomie des usagers',
+      'Adaptation de la communication et des supports en fonction des besoins spécifiques',
+      'Responsable d\'une ligne de 34+ participants, gestion de la soute (38+ bagages)',
+    ],
+  },
+  {
+    id: 4,
+    role: 'Animateur Enfants',
+    company: 'Mairie de Rouen',
+    period: '2024 — 2025',
+    description: 'Animation d\'activités éducatives et ludiques pour enfants dans le cadre des programmes de la Mairie de Rouen.',
+    tasks: [
+      'Conception et animation d\'ateliers créatifs, activités manuelles et jeux collectifs',
+      'Encadrement de sorties et gestion de groupes d\'enfants',
+    ],
+  },
+  {
+    id: 5,
+    role: 'Cadreur / Partenariats / Création Contenu',
+    company: 'FTKR FC',
+    period: '2023 — Présent',
+    description: 'Développement de la stratégie de communication et de l\'image du club FTKR FC. Production de contenus vidéo et gestion des partenariats.',
+    tasks: [
+      'Captation vidéo, montage et création de miniatures pour YouTube et TikTok',
+      'Gestion des partenariats et développement commercial du club',
+      'Création de contenus pour comptes influenceurs (réseaux sociaux)',
+      'Communication digitale : réseaux sociaux, campagnes de visibilité',
     ],
     links: [
       { label: 'Instagram @ftkr_fc',  url: 'https://www.instagram.com/ftkr_fc/' },

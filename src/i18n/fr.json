@@ -77,6 +77,14 @@
       {
         "title": "Création assistée par IA",
         "description": "Utilisation de l'intelligence artificielle (ChatGPT, Midjourney) pour accélérer la création de contenus, de visuels et de stratégies digitales."
+      },
+      {
+        "title": "Innovation & Architecture IA (MCP)",
+        "description": "Expert en pilotage d'agents autonomes via le protocole MCP. Je connecte l'IA aux données réelles de votre entreprise pour automatiser, livrer plus vite et sans erreurs."
+      },
+      {
+        "title": "Accessibilité Web (WCAG)",
+        "description": "Audit et mise en conformité WCAG 2.1 AA. Sites inclusifs, utilisables par tous — automatisés par IA pour un rendu parfait en temps record."
       }
     ]
   },

@@ -21,7 +21,7 @@ export function About() {
           <div className={styles.avatarWrapper}>
             <div className={styles.avatarFrame}>
               <div className={styles.avatarInner}>
-                <img src="/demba-assis-pc.webp" alt="Demba Mbow" className={styles.avatarPhoto} fetchPriority="high" />
+                <span role="img" aria-label="Demba Mbow — Créateur digital">👨🏿‍💻</span>
               </div>
               <div className={styles.deco1} />
               <div className={styles.deco2} />
@@ -59,9 +59,11 @@ export function About() {
               {t('about.bio3')} <strong>{t('about.bio3Time')}</strong> {t('about.bio3End')}
             </p>
             <a
-              href="#contact"
+              href="https://dembambow.com/wp-content/uploads/2026/03/Cv_Demba_mbow.pdf"
               className={styles.cvLink}
-              onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Cv_Demba_mbow.pdf"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               {t('about.cvBtn')}
